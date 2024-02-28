@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# Minizuba
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Minizuba is a packaging solution startup. The “Packaging Supervisor” at Minizuba receives a list of the products that need to be packed through an API endpoint. Then a list of items is distributed to each packaging team depending on the type of package. Navigating the API poses challenges for the supervisor.
 
-## Available Scripts
+## How To Run
 
-In the project directory, you can run:
+### `npm install`
+
+Firstly, Install all the dependencies
 
 ### `npm start`
 
@@ -19,52 +21,21 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Problem Statement
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Develop an application that displays all the orderlines(14 types) on UI. You can access the Minizuba API to fetch the relevant information.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Following Solutions have been covered as per the problem statement
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Packaging orders displayed in a list view
+- When no filters are applied all orderlines should be displayed.
+- “OrderLineID” as the first column(extreme left)
+- Items are always sorted in ascending order of “OrderLineID”
+- Ensure fast loading of list items for user convenience
+- Ability to filter by “Quantity”
+- Ensure usability remains smooth even in slow network conditions
+- Grouping by “OrderID” 
+- Grouping by “UserID”
+- Unit test cases
+- Color code each package type.
