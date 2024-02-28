@@ -13,7 +13,6 @@ const GroupedDataTable = ({ data, groupByField }) => {
     return acc;
   }, {});
 
-  console.log({ groupedData });
   return (
     <div>
       <Grid container spacing={2}>

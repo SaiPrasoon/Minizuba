@@ -74,10 +74,10 @@ const DashboardFilters = ({ orderFormData, onApply, onCancel }) => {
           />
         </div>
         <div className="actions-container">
-          <Button onClick={onCancel} variant="outlined">
+          <Button onClick={onCancel} variant="outlined" id='cancelButton'>
             Cancel
           </Button>
-          <Button onClick={handleApply} variant="contained">
+          <Button onClick={handleApply} variant="contained" id='applyButton'>
             Apply
           </Button>
         </div>

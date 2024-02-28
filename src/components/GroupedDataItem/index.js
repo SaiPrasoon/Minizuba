@@ -24,11 +24,13 @@ const GroupedDataItem = ({ groupByField, dataKey, data, key }) => {
         <div className="card-title-container">
           {showTable ? (
             <IndeterminateCheckBoxRoundedIcon
+              id='hideTableButton'
               onClick={toggleShowTable}
               className="card-icon"
             />
           ) : (
             <AddBoxRoundedIcon
+            id='showTableButton'
               onClick={toggleShowTable}
               className="card-icon"
             />
@@ -38,7 +40,7 @@ const GroupedDataItem = ({ groupByField, dataKey, data, key }) => {
           </span>
         </div>
         {showTable ? (
-          <div className="card-table-container">
+          <div className="card-table-container" id="table">
             <DataTable
               rowData={data}
               columnConfig={TABLE_COLUMN_CONFIG}

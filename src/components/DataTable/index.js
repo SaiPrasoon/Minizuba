@@ -32,6 +32,7 @@ const DataTable = ({ rowData = [], columnConfig = [] }) => {
   // Get current page data
   const currentPageData = rowData.slice(startIndex, endIndex);
 
+
   return (
     <>
       {currentPageData.length ? (
@@ -51,7 +52,7 @@ const DataTable = ({ rowData = [], columnConfig = [] }) => {
             <TableBody>
               {currentPageData.map((row) => (
                 <TableRow
-                  key={row.name}
+                  key={row.orderID}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   {columnConfig.map((config) => {
@@ -66,6 +67,7 @@ const DataTable = ({ rowData = [], columnConfig = [] }) => {
             </TableBody>
           </Table>
           <TablePagination
+          id="pagination"
             component="div"
             count={rowData.length}
             page={page}
@@ -75,7 +77,7 @@ const DataTable = ({ rowData = [], columnConfig = [] }) => {
           />
         </TableContainer>
       ) : (
-        <NoData />
+        <NoData id='noData' />
       )}
     </>
   );

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getOrderLines } from "../../utils/api";
 import Loader from "../Loader";
-// import { DataGrid } from "@mui/x-data-grid";
 import { TABLE_COLUMN_CONFIG } from "../../utils/constants";
 import "./index.css";
 import {
@@ -38,7 +37,7 @@ const Dashboard = () => {
       );
       if (response.res.status === 200) {
         setIsLoading(() => false);
-        setOrderList(() => response.res.data);
+        setOrderList(response.res.data);
       }
     } catch (error) {
       setIsLoading(() => false);
@@ -81,6 +80,7 @@ const Dashboard = () => {
   return (
     <>
       <Popover
+      id="popover"
         open={open}
         anchorEl={anchorEl}
         onClose={() => togglePopoverOpen()}
@@ -90,6 +90,7 @@ const Dashboard = () => {
         }}
       >
         <DashboardFilters
+          id='dashboardFilters'
           orderFormData={orderFormData}
           onApply={handleApplyFilters}
           onCancel={() => togglePopoverOpen()}
@@ -97,10 +98,7 @@ const Dashboard = () => {
       </Popover>
 
       <Menu
-        id="long-menu"
-        MenuListProps={{
-          "aria-labelledby": "long-button",
-        }}
+        id="menu"
         anchorEl={groupByMenuEl}
         open={isMenuOpen}
         onClose={() => toggleMenuOpen()}
@@ -125,13 +123,13 @@ const Dashboard = () => {
 
               <div className="table-filters">
                 <Tooltip title="Group By" TransitionComponent={Zoom} arrow>
-                  <IconButton onClick={toggleMenuOpen}>
+                  <IconButton onClick={toggleMenuOpen} id="menuButton">
                     <AutoAwesomeMotionIcon />
                   </IconButton>
                 </Tooltip>
 
                 <Tooltip title="Filters" TransitionComponent={Zoom} arrow>
-                  <IconButton onClick={togglePopoverOpen}>
+                  <IconButton onClick={togglePopoverOpen} id="filtersButton">
                     <TuneIcon />
                   </IconButton>
                 </Tooltip>
