@@ -2,7 +2,6 @@
   "name": "minizuba",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "dependencies": {
     "@cfaester/enzyme-adapter-react-18": "^0.7.1",
     "@emotion/react": "^11.11.4",
